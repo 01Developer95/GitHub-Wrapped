@@ -50,6 +50,13 @@ For your own data, you'll need:
 
 **That's it!** No installation, no build process, no dependencies.
 
+## 🌐 Live Demo
+
+**Try it now!** Visit the live version at:  
+👉 **[https://01developer95.github.io/GitHub-Wrapped/](https://01developer95.github.io/GitHub-Wrapped/)**
+
+Create your own GitHub Wrapped and share your coding journey with the world!
+
 ### Deployment
 
 This repository includes a `dist/` folder containing the production-ready build.
