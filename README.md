@@ -4,7 +4,7 @@
 
 > **Beautiful yearly summary of your coding journey** - Like Spotify Wrapped, but for your GitHub activity!
 
-![GitHub Wrapped](https://img.shields.io/badge/Year-2024-purple?style=for-the-badge)
+![GitHub Wrapped](https://img.shields.io/badge/Year-2025-purple?style=for-the-badge)
 ![AI Powered](https://img.shields.io/badge/AI-Gemini-blue?style=for-the-badge)
 ![Free](https://img.shields.io/badge/100%25-Free-green?style=for-the-badge)
 
@@ -14,7 +14,7 @@
 - 🤖 **AI-Powered Insights** - Personalized analysis of your coding journey using Google Gemini
 - 📊 **Comprehensive Stats** - Commits, languages, repos, productivity patterns, and more
 - 📱 **Fully Responsive** - Beautiful on desktop, tablet, and mobile
-- 🎯 **Year Selection** - View any year's wrapped (2020-2024)
+- 🎯 **Year Selection** - View any year's wrapped (2020-2025)
 - 🔒 **Privacy-Focused** - All processing happens client-side, credentials never stored
 - 🚀 **100% Free** - Uses free GitHub API and Gemini API
 
@@ -47,7 +47,7 @@ For your own data, you'll need:
    - GitHub username
    - GitHub Personal Access Token
    - Gemini API Key
-   - Select year (2020-2024)
+   - Select year (2020-2025)
 4. Click "Generate My Wrapped" ✨
 
 **That's it!** No installation, no build process, no dependencies.
