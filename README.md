@@ -75,7 +75,7 @@ Use the contents of `dist` for the cleanest deployment.
 
 ```
 github-wrapped/
-└── dist/              # 🚀 Production Build (Ready for upload)
+└── dist/              # 🚀 Production Build Ready
     ├── index.html     
     ├── app.js         
     ├── styles.css     
