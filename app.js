@@ -1549,8 +1549,10 @@ document.addEventListener('click', (e) => {
 🌟 ${data.totalStars} Stars Earned
 🔥 Most Active: ${data.commits.byMonth ? Slides.getMostActiveMonth(data.commits.byMonth) : 'Unknown'}
 
-Check out your own coding year in review! 👇
-#GitHubWrapped #CodingJourney #Developer2024`;
+🎯 Create your own coding year in review!
+👉 Visit: https://01developer95.github.io/GitHub-Wrapped/
+
+#GitHubWrapped #CodingJourney #Developer2024 #YearInReview`;
     };
 
     if (e.target.closest('.twitter-btn')) {
