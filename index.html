@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Wrapped 2024 - Your Coding Year in Review</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Discover your GitHub year in review. Beautiful yearly summary of your coding journey, powered by AI.">
+    <meta name="keywords" content="GitHub, Wrapped, Coding, Year in Review, Developer Stats">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GitHub Wrapped - Your Coding Year in Review">
+    <meta property="og:description" content="Beautiful yearly summary of your coding journey">
+    <meta property="og:image" content="https://github-wrapped.app/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GitHub Wrapped - Your Coding Year in Review">
+    <meta name="twitter:description" content="Beautiful yearly summary of your coding journey">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="landing-container">
+            <div class="hero-section">
+                <div class="logo-container">
+                    <svg class="github-logo" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="hero-title">GitHub Wrapped</h1>
+                    <span class="year-badge">2024</span>
+                </div>
+                <p class="hero-subtitle">Your coding year in review</p>
+            </div>
+
+            <div class="auth-card">
+                <h2>Connect Your GitHub</h2>
+                <p class="auth-description">Authorize secure access to your GitHub data and provide your Gemini API Key
+                    for AI-powered insights. We don't store your tokens.</p>
+
+                <form id="auth-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="github-username">GitHub Username</label>
+                        <input type="text" id="github-username" placeholder="octocat" required autocomplete="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="github-token">
+                            Personal Access Token
+                            <a href="https://github.com/settings/tokens/new?scopes=read:user,repo&description=GitHub%20Wrapped"
+                                target="_blank" rel="noopener noreferrer" class="help-link">
+                                Get Token
+                            </a>
+                        </label>
+                        <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxx" required
+                            autocomplete="off">
+                        <small class="help-text">We need read access to your public repos. Your token is never
+                            stored.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gemini-key">
+                            Gemini API Key
+                            <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer"
+                                class="help-link">
+                                Get Key
+                            </a>
+                        </label>
+                        <input type="password" id="gemini-key" placeholder="AIzaSyxxxxxxxxxx" required
+                            autocomplete="off">
+                        <small class="help-text">For AI-powered insights. Free tier available.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year-select">Year</label>
+                        <select id="year-select" class="year-select">
+                            <!-- Years will be populated automatically by auto-year.js -->
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="generate-btn">
+                        <span class="btn-text">Generate My Wrapped</span>
+                        <span class="btn-icon">✨</span>
+                    </button>
+
+
+                </form>
+
+                <div class="privacy-note">
+                    <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>All data processed locally. Your credentials are never stored.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Page -->
+    <div id="loading-page" class="page">
+        <div class="loading-container">
+            <div class="loading-animation">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <h2 class="loading-title">Analyzing Your Coding Journey</h2>
+            <p class="loading-status" id="loading-status">Connecting to GitHub...</p>
+            <div class="loading-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story Slides Container -->
+    <div id="story-container" class="page">
+        <div class="slides-wrapper" id="slides-wrapper">
+            <!-- Slides will be dynamically generated here -->
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation-controls">
+            <button class="nav-btn nav-prev" id="prev-btn" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="slide-indicators" id="slide-indicators">
+                <!-- Dots will be generated dynamically -->
+            </div>
+
+            <button class="nav-btn nav-next" id="next-btn" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="action-btn" id="download-btn" aria-label="Download as image">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download</span>
+            </button>
+
+
+
+            <button class="action-btn" id="restart-btn" aria-label="Start over">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="1 4 1 10 7 10"></polyline>
+                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                </svg>
+                <span>New Wrapped</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon error-icon">⚠️</div>
+            <h3 class="modal-title">Oops! Something went wrong</h3>
+            <p class="modal-message" id="error-message"></p>
+            <button class="btn-primary" id="close-error-btn">Try Again</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
