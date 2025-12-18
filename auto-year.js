@@ -36,12 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentMonth = now.getMonth() + 1; // 0-indexed, so add 1
 
     // Determine which year's wrapped to show
-    let wrappedYear;
-    if (currentMonth <= 3) {
-        wrappedYear = currentYear - 1;
-    } else {
-        wrappedYear = currentYear - 1;
-    }
+    // Use current year as the default
+    let wrappedYear = currentYear;
 
     console.log(`Auto-detected wrapped year: ${wrappedYear}`);
 
@@ -61,8 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         yearSelect.innerHTML = '';
 
         // Generate options from current year down to 2020
-        // (Include current year if we're in December, otherwise start from last year)
-        const startYear = (currentMonth === 12) ? currentYear : (currentMonth > 6 ? currentYear : currentYear - 1);
+        const startYear = currentYear;
         const endYear = 2020;
 
         for (let year = startYear; year >= endYear; year--) {
