@@ -118,8 +118,12 @@
 
                     <div class="form-group">
                         <label for="year-select">Year</label>
-                        <select id="year-select" class="year-select">
-                            <!-- Years will be populated automatically by auto-year.js -->
+                        <select id="year-select" class="year-select" style="position: relative; z-index: 60;">
+                            <option value="2025">2025</option>
+                            <option value="2024" selected>2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <!-- More years populated by auto-year.js -->
                         </select>
                     </div>
 

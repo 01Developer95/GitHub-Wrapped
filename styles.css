@@ -387,11 +387,16 @@ body::after {
 
 .year-select {
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237d8590' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 8px center;
+    background-position: right 12px center;
     padding-right: 32px;
+    z-index: 52;
+    position: relative;
+    background-color: var(--gh-canvas-default) !important;
 }
 
 /* Primary Button - GitHub Green */
@@ -1567,34 +1572,37 @@ canvas {
 /* Heatmap */
 .heatmap-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 4px;
-    max-width: 400px;
-    margin: 0 auto;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px;
+    max-width: 700px;
+    margin: var(--spacing-4) auto;
+    padding: var(--spacing-3);
 }
 
 .heatmap-cell {
     aspect-ratio: 1;
-    border-radius: 2px;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 0;
     animation: fadeInScale 0.4s ease forwards;
+    min-height: 50px;
+    padding: 4px;
 }
 
 .heatmap-month {
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--gh-fg-default);
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .heatmap-value {
-    font-size: 10px;
+    font-size: 14px;
     color: var(--gh-fg-default);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Productivity Chart */
@@ -1602,14 +1610,13 @@ canvas {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     align-items: end;
-    height: 180px;
-    padding: var(--spacing-4) 0;
-    gap: 4px;
-    /* Reduced gap slightly to fit better */
-    max-width: 500px;
+    height: 280px;
+    padding: var(--spacing-5) var(--spacing-4);
+    gap: 12px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     justify-items: center;
-    /* Center items in their grid cells */
 }
 
 .productivity-bar-container {
@@ -1626,27 +1633,27 @@ canvas {
 
 .productivity-bar {
     width: 100%;
-    max-width: 20px;
-    /* Slightly narrower for grid */
+    max-width: 45px;
     background: var(--gh-accent-emphasis);
-    border-radius: 4px 4px 0 0;
+    border-radius: 8px 8px 0 0;
     transition: height 1s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 2px;
+    min-height: 4px;
 }
 
 .productivity-day {
-    margin-top: 8px;
-    font-size: 11px;
+    margin-top: 12px;
+    font-size: 15px;
     color: var(--gh-fg-default);
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
     width: 100%;
 }
 
 .productivity-count {
-    font-size: 10px;
+    font-size: 14px;
     color: var(--gh-fg-muted);
-    margin-top: 2px;
+    margin-top: 4px;
+    font-weight: 500;
 }
 
 @keyframes fadeInScale {
